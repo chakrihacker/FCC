@@ -11,9 +11,20 @@ chanty.chakravarthy@gmail.com
 http://www.freecodecamp.com/chakrihacker
 */
 
+//Method 1
 function reverseString(str) {
   var revstr = str.split('').reverse().join('');
   return revstr
 }
 
+//Method 2
+revstr2 = ""
+function reverseString2(str) {
+  for(var i = str.length - 1; i >=0; i--){
+    revstr2 += str[i];
+  }
+  return revstr2
+}
+
 console.log(reverseString("hello"));
+console.log(reverseString2("chakri"));
