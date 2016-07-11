@@ -29,3 +29,19 @@ function palindrome(str) {
 }
 
 console.log(palindrome('_eye'));
+
+// Method 2 : using for loop
+function palindrome2(str) {
+  // Good luck!
+  var nonalphanum = str.replace(/[\W_]/gi,'');
+  var lowercasestr = nonalphanum.toLowerCase();
+  var midlength = (lowercasestr.length)/2;
+  for (var i = 0; i < midlength; i++){
+    if(lowercasestr[i] !== lowercasestr[lowercasestr.length-i-1]){
+      return false;
+    }
+  }
+  return true;
+}
+console.log(palindrome2("almostomla"));
+console.log(palindrome2('_eye'));
