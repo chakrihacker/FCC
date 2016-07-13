@@ -48,6 +48,11 @@ function largestOfFour3(arr) {
   });
 }
 
+// Fcc Advanced Approach
+function largestOfFour4(arr) {
+  return arr.map(Function.apply.bind(Math.max, null));
+}
+
 console.log(largestOfFour([
     [4, 5, 1, 3],
     [13, 27, 18, 26],
@@ -57,3 +62,4 @@ console.log(largestOfFour([
 
 console.log(largestOfFour2([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));
 console.log(largestOfFour3([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));
+console.log(largestOfFour4([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));
