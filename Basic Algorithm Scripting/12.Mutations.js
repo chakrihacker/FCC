@@ -12,9 +12,45 @@ Here are some helpful links:
 
 String.prototype.indexOf() */
 
+// My Approach took 1.5 day but worth taking it. Sometimes we don't read the problem correctly
+// think what we are doing is right. when the answer is wrong try to read problem again and
+// Don't forget to take rest and come back to it and try in new way.
 function mutation(arr) {
+  var result = 0;
 
-  return arr;
+  lowercasearr = arr.map(function(lowercase){
+    return lowercase.toLowerCase();
+  });
+  console.log(lowercasearr);
+  for(var i = 0; i < lowercasearr[1].length; i++){
+    result = lowercasearr[0].indexOf(lowercasearr[1][i]);
+    if (result < 0) {
+      return false;
+    }
+  }
+  return true;
 }
 
-mutation(["hello", "hey"]);
+//Fcc Approach Basic Solution
+
+function mutation1(arr) {
+  var test = arr[1].toLowerCase();
+  var target = arr[0].toLowerCase();
+  for (var i = 0; i < test.length; i++) {
+    if (target.indexOf(test[i]) < 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+// Fcc intermediate Approach
+function mutation2(arr) {
+  return arr[1].toLowerCase().split('').every(function(letter){
+    return arr[0].toLowerCase().indexOf(letter) != -1;
+  });
+}
+
+console.log(mutation(["hello", "Hello"]));
+console.log(mutation1(["hello", "Hello"]));
+console.log(mutation2(["hello", "Hello"]));
